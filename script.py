@@ -22,11 +22,33 @@ while num_disks < 3:
 for disk_num in range(num_disks, 0, -1):
   left_stack.push(disk_num)
 
-num_optimal_noves = 2**num_disks - 1
+num_optimal_moves = 2**num_disks - 1
 
-print(f`\nThe fastest you can solve this game is in {num_optimal_moves} moves`')
+print(f'\nThe fastest you can solve this game is in {num_optimal_moves} moves')
 
 #Get User Input
+def get_input():
+  """ """
 
-        
+  choices = [stack.get_name()[0] for stack in stacks]
+
+  while True:
+
+    for i in range(len(stacks)): 
+      name = stacks[i].get_name() 
+      letter = choices[i]
+
+      print(f'Enter {letter} for {name}')
+    
+    user_input = input("")
+
+    if user_input in choices:
+      for i in range(len(stacks)): 
+        if user_input == choices[i]:
+          return stacks[i]
+
+
+
+
+    
 #Play the Game
